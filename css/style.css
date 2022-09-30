@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* estilos del loguin */
+
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #6a11cb;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+    }
+/*estilos del body*/
+body{
+    background-color: black;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+h2{
+    color: red;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.logotipo{
+    display: flex;
+    justify-content:flex-start;
+}
+
+.container-fluid{
+    display: flex;
+    justify-content: end;
+}
+
+.navbar navbar-expand-lg navbar-light bg-light {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a{
+    color: gray !important;
+}
+.navbar navbar-expand-lg navbar-light bg-light .navbar-brand {
+    margin-right: 20px;
+}
+
+.btn-menu{
+    background: #000;
+}
+.nav-link,
+.nav-link active {
+    color: white 
+}
+.contenedor{
+    width: 90%;
+    margin: auto;
+}
+
+
+/* -------------Pelicula Principal-----------------*/
+
+.pelicula-principal{
+    font-size: 16px;
+    min-height: 40.62em;
+    color: white;
+    background:linear-gradient( rgb(0, 0, 0, .50)0% , rgb(0, 0, 0, .50)100%) , url(../assets/img/imagenPrincial.jpg);
+    background-position: center center;
+}
+
+.titulo{
+    padding-top: 25%;
+}
+
+.subtitulo{
+    font-size: 15px;
+    margin-left: 50px;
+    opacity: 0.7;
+}
+
+.descripcion{
+    opacity: 0.7;
+}
+
+
+
+/*Estilo de las Cards*/
+.card-peli-titulo{
+    font-weight: bold;
+    color:rgba(231, 7, 7, 0.938);
+    text-align: center;
+
+    
+}
+
+.card-text{
+    font-weight:bold;
+    text-decoration-line: none;
+    border-color: black ;
+    text-align: center;
+}
+
+.card.my-3{
+
+background-color: gray;
+}
+
+/*estilo del boton comprar*/
+.btn btn-primary{
+background-color: firebrick;
+}
+/*Estilos en la seccion formulario*/
+
+.formulario{
+    display: contents;
+    align-items: center;
+}
+
+/* Estilos en la seccion: peliculas*/
+h3{
+    margin-left: 20px;
+}
+
+/* Estilos de los botones de las Card*/
+
+#btn-add- {
+    color: black;
+    background-color: blue;
+
+}
+
+/*boton corazon*/
+
+.heart-corazon{
+    fill: red;
+}
+
+.heart-corazon{
+    cursor: pointer;
+}
+
+
