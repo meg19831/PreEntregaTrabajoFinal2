@@ -245,10 +245,15 @@ botonInfoCards.addEventListener("click", () => {
 
 //boton corazon
 
-const corazon = document.querySelector("#corazon")
-corazon.addEventListener ("click", ()=>corazon.classList.toggle(`heart-color`));
 
-
+corazon.addEventListener("click", () => {
+  if (corazon.classList.contains("heart-corazon")) {
+    corazon.classList.remove('heart-corazon')
+  } else {
+    corazon.classList.add('heart-corazon')
+  }
+}
+);
 
 // eliminar uno a uno los productos del carrito 
 const eliminarDelCarrito = (e) => {

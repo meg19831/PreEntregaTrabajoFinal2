@@ -138,11 +138,10 @@ h3{
 
 /*boton corazon*/
 
-.heart-corazon{
-    fill: red;
-}
+
 
 .heart-corazon{
+    fill: red;
     cursor: pointer;
 }
 
