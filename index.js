@@ -184,7 +184,7 @@ document.addEventListener("click", (e) => {
 
 const button = document.querySelector("#botonModalComprar");
 button.addEventListener("click", () => {
-  Swal.fire({
+ Swal.fire({
     title: "Muchas Gracias por tu compra",
     text: "La venta fue guardada con el id 123456. Pronto te llegará una confirmación a tu correo electrónico",
     imageUrl: 'assets/img/imagenFinalDeCompra.png',
@@ -194,6 +194,8 @@ button.addEventListener("click", () => {
     confirmButtonText: "Aceptar",
 });
 });
+
+
 
 //boton Informacion
 
@@ -214,11 +216,11 @@ botonInfo.addEventListener("click", () => {
   }
 });
 
-//informacion de las tarejetas
-/* const infoTarjetas = document.getElementsByClassName("btn-outline-info");
+//info de las tarejetas
+const infoTarjetas = document.querySelector("#btn-outline-info");
 infoTarjetas.addEventListener("click", () => {
-  console.log("hola");
-}); */
+console.log('estas haciendo click');
+});
 
 
 
@@ -301,24 +303,17 @@ corazon.addEventListener("click", () => {
 );
 
 //corazones de las Cards
-
-/* corazon.addEventListener("click", () => {
-  if (corazon.classList.contains('corazonCards')) {
-    corazon.classList.remove('corazonCards')
-  } else {
-    corazon.classList.add('corazonCards')
-  }
-}
-); */
-/* const meGusta=document.querySelector('#meGusta')
-meGusta.addEventListener("click", () => {
-  if (meGusta.classList.contains('corazonCards')) {
-   meGusta.classList.add('corazonCard')
+const heart = document.getElementById ('#heart')
+heart-corazon.addEventListener("click",() => {
+  if (heart.classList.contains('heart-corazon')) {
+    
   }else{
-    meGusta.classList.remove ('corazonCards')
+    heart.classList.add('heart-corazon')
   }
   console.log('estas haciendo click');
-}); */
+}
+);
+
 
 // eliminar uno a uno los productos del carrito 
 const eliminarDelCarrito = (e) => {
@@ -349,14 +344,11 @@ function catalogoDePeliculas(productos) {
                                             <p class = "card-text">Anio: ${producto.anio}</p>
                                             <p class = "card-text">Duracion: ${producto.duracion}</p> 
                                             <p class = "card-text">Idioma: ${producto.idioma}</p>
-                                            
                                             <button data-id="${producto.id}" class="btn btn-primary btncomprar m-3">Comprar</button>
-                                           
-                          <button type="button" class="btn btn-outline-info" id ="btn-outline-info">Info</button>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" id="corazon" class="bi heart-corazon"viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-            </svg>
-
+                                            <button type="button" class="btn btn-outline-info" id ="btn-outline-info">Info</button>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" id="heart" class="bi heart-corazon"viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                                          </svg>
                                         </div>
                                     </div>`;
 
