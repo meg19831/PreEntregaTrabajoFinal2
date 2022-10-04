@@ -163,16 +163,14 @@ const listaDePeliculas = [
 
 //boton comprar
 document.addEventListener("click", (e) => {
-  
   if (e.target.matches(".btncomprar")) {
-
-    agregarCarrito(e);
+  agregarCarrito(e);
 Swal.fire(
     'Producto agregado a tu carrito!',
     'Dale click al boton!',
     'success'
-  )
-  }
+  )}
+ 
 });
 
 //boton eliminar
@@ -189,7 +187,7 @@ button.addEventListener("click", () => {
   Swal.fire({
     title: "Muchas Gracias por tu compra",
     text: "La venta fue guardada con el id 123456. Pronto te llegará una confirmación a tu correo electrónico",
-    imageUrl: 'https://unsplash.it/400/200',
+    imageUrl: 'assets/img/imagenFinalDeCompra.png',
     imageWidth: 400,
     imageHeight: 200,
     imageAlt: 'Custom image',
@@ -216,44 +214,111 @@ botonInfo.addEventListener("click", () => {
   }
 });
 
-//boton info cards
-
-/* const botonInfoCards = document.querySelector("#infoCards");
-botonInfoCards.addEventListener("click", () => {
-  Swal.fire({
-    title: 'Bottom drawer 👋',
-    position: 'bottom',
-    showClass: {
-      popup: `
-        animate__animated
-        animate__fadeInUp
-        animate__faster
-      `
-    },
-    hideClass: {
-      popup: `
-        animate__animated
-        animate__fadeOutDown
-        animate__faster
-      `
-    },
-    grow: 'row',
-    showConfirmButton: false,
-    showCloseButton: true
-  })
+//informacion de las tarejetas
+/* const infoTarjetas = document.getElementsByClassName("btn-outline-info");
+infoTarjetas.addEventListener("click", () => {
+  console.log("hola");
 }); */
+
+
+
+
+//autenticar usuario
+const loguinUsuario = [];
+
+async function autenticar() {
+  const { value: formAutenticar } = await Swal.fire({
+    title: "Registro Usuario",
+    html:
+      '<div class="form-inline col-sm-12 mt-3">' +
+      '<label class="control-label col-sm-4" for="UserName">Usuario</label>' +
+      '<input required="" class="form-control col-sm-7" id="UserName" name="usuario" type="text" autofocus style="color: #2e7d32;">' +
+      "</div>" +
+      '<div class="form-inline col-sm-12 mt-3">' +
+      '<label class="control-label col-sm-4" for="UserPass">Contraseña</label>' +
+      '<input required="" class="form-control col-sm-7" id="UserPass" name="clave" type="password" style="color: #2e7d32;">' +
+      "</div>",
+    backdrop: false,
+    showConfirmButton: true,
+    showCancelButton: true,
+    confirmButtonText: "Guardar",
+    cancelButtonText: "Cancelar",
+    confirmButtonColor: "#40B340",
+    cancelButtonColor: "#FF0000",
+    showCloseButton: true,
+    focusConfirm: true,
+    focusCancel: false,
+    preConfirm: () => {
+      return [
+        document.getElementById("UserName").value,
+        document.getElementById("UserPass").value,
+      ];
+    },
+    onOpen: (modal) => {
+      confirmOnEnter = (event) => {
+        if (event.keyCode === 13) {
+          event.preventDefault();
+          modal.querySelector(".swal2-confirm").click();
+        }
+      };
+      modal
+        .querySelector("#UserName")
+        .addEventListener("keyup", confirmOnEnter);
+      modal
+        .querySelector("#UserPass")
+        .addEventListener("keyup", confirmOnEnter);
+    },
+  });
+
+  if (formAutenticar && formAutenticar[0] != "" && formAutenticar[1] != "") {
+    const datosUsuario =
+    Swal.fire({
+      title: "Usuario Registrado",
+      icon: "success",
+      backdrop: false,
+    });
+    loguinUsuario.push (datosUsuario)
+  } else {
+    Swal.fire({
+      title: "Datos incorrectos",
+      icon: "warning",
+      backdrop: false,
+    });
+  }
+}
+
 
 //boton corazon
 
-
 corazon.addEventListener("click", () => {
-  if (corazon.classList.contains("heart-corazon")) {
+  
+  if (corazon.classList.contains('heart-corazon')) {
     corazon.classList.remove('heart-corazon')
   } else {
     corazon.classList.add('heart-corazon')
   }
 }
 );
+
+//corazones de las Cards
+
+/* corazon.addEventListener("click", () => {
+  if (corazon.classList.contains('corazonCards')) {
+    corazon.classList.remove('corazonCards')
+  } else {
+    corazon.classList.add('corazonCards')
+  }
+}
+); */
+/* const meGusta=document.querySelector('#meGusta')
+meGusta.addEventListener("click", () => {
+  if (meGusta.classList.contains('corazonCards')) {
+   meGusta.classList.add('corazonCard')
+  }else{
+    meGusta.classList.remove ('corazonCards')
+  }
+  console.log('estas haciendo click');
+}); */
 
 // eliminar uno a uno los productos del carrito 
 const eliminarDelCarrito = (e) => {
@@ -285,14 +350,21 @@ function catalogoDePeliculas(productos) {
                                             <p class = "card-text">Duracion: ${producto.duracion}</p> 
                                             <p class = "card-text">Idioma: ${producto.idioma}</p>
                                             
-                                            <button data-id="${producto.id}" class="btn btn-primary btncomprar">Comprar</button>
+                                            <button data-id="${producto.id}" class="btn btn-primary btncomprar m-3">Comprar</button>
+                                           
+                          <button type="button" class="btn btn-outline-info" id ="btn-outline-info">Info</button>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" id="corazon" class="bi heart-corazon"viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+            </svg>
+
                                         </div>
                                     </div>`;
 
     peliculasContainer.appendChild(cardPeli);
     
-    
   });
+
+
 }
 
 //funcion para agregar productos en el carrito
@@ -355,12 +427,9 @@ function verCarrito() {
 
     let badge = document.getElementById("badge");
     badge.innerText = carrito.length
-      
     precioTotal.textContent = total
   });
 }
-
-
 
 //vaciar carrito
 const botonVaciar = document.getElementById("vaciar-carrito");
