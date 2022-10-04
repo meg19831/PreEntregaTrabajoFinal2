@@ -13,7 +13,9 @@ class Producto {
     anio,
     precio,
     img,
-    cantidad
+    descripcion,
+    cantidad,
+    
   ) {
     this.id = id;
     this.titulo = titulo;
@@ -23,19 +25,23 @@ class Producto {
     this.anio = anio;
     this.precio = precio;
     this.img = img;
+    this.descripcion = descripcion;
     this.cantidad = cantidad;
+    
   }
 }
 
 let carrito = [];
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", (e) => {
   catalogoDePeliculas(listaDePeliculas);
   if (localStorage.getItem("carrito")) {
     carrito = JSON.parse(localStorage.getItem("carrito"));
     verCarrito();
   }
-
+/* if (e.target.matches(".corazon2")){
+  corazoncards.classList.toggle ('heart-corazon')
+} */
 });
 
 const listaDePeliculas = [
@@ -47,7 +53,8 @@ const listaDePeliculas = [
     "ingles",
     "2011",
     1500,
-    "assets/img/accion8.jpg"
+    "assets/img/accion8.jpg",
+    "Captain America: Civil War” continúa la historia de “Avengers: Age of Ultron”, con Steve Rogers liderando un nuevo equipo de Vengadores en su esfuerzo por proteger a la humanidad. Tras otro incidente internacional relacionado con los Vengadores que ocasiona daños colaterales, la presión política fuerza a crear un sistema de registro y un cuerpo gubernamental para determinar cuándo se requiere los servicios del equipo. El nuevo status quo divide a los Vengadores mientras intentan salvar al mundo de un nuevo y perverso villano."
   ),
   new Producto(
     2,
@@ -57,7 +64,8 @@ const listaDePeliculas = [
     "ingles",
     "2012",
     1500,
-    "assets/img/accion7.jpg"
+    "assets/img/accion7.jpg",
+    "Cuando un enemigo inesperado surge como una gran amenaza para la seguridad mundial, Nick Fury, director de la Agencia SHIELD, decide reclutar a un equipo para salvar al mundo de un desastre casi seguro."
   ),
   new Producto(
     3,
@@ -67,7 +75,8 @@ const listaDePeliculas = [
     "ingles",
     2005,
     1100,
-    "assets/img/aventura7.jpg"
+    "assets/img/aventura7.jpg",
+    "La Compañía del Anillo se ha disuelto. El portador del anillo Frodo y su fiel amigo Sam se dirigen hacia Mordor para destruir el Anillo Único y acabar con el poder de Sauron. Mientras, y tras la dura batalla contra los orcos donde cayó Boromir, el hombre Aragorn, el elfo Legolas y el enano Gimli intentan rescatar a los medianos Merry y Pipin, secuestrados por los ogros de Mordor. Por su parte, Saurón y el traidor Sarumán continúan con sus planes en Mordor, en espera de la guerra contra las razas libres de la Tierra Media."
   ),
   new Producto(
     4,
@@ -77,7 +86,8 @@ const listaDePeliculas = [
     "ingles",
     "2014",
     1200,
-    "assets/img/suspenso7.jpg"
+    "assets/img/suspenso7.jpg",
+    "John Wick es un antiguo asesino a sueldo de Nueva York que se había retirado de la profesión después de perder a su esposa. Pero, al descubrir la oscura trama que la mafia había planeado para acabar con él, arrebatándole lo que más quería, volverá a introducirse en el negocio, esta vez por su cuenta, para vengarse."
   ),
   new Producto(
     5,
@@ -87,7 +97,8 @@ const listaDePeliculas = [
     "ingles",
     "2020",
     1200,
-    "assets/img/accion4.jpg"
+    "assets/img/accion4.jpg",
+    "Un experimento para solucionar el calentamiento global acabó con la mayoría de vida existente en el planeta. El último tren llamado Snowpiercer (Rompenieves) se mueve en círculos por el mundo, a través de un desierto de hielo y nieve. Los últimos supervivientes de la Tierra se amontonan en sus vagones. El joven Curtis (Chris Evans) iniciará una revolución desde los vagones de cola."
   ),
   new Producto(
     6,
@@ -97,7 +108,8 @@ const listaDePeliculas = [
     "ingles",
     "2022",
     1200,
-    "assets/img/suspenso1.jpg"
+    "assets/img/suspenso1.jpg",
+    "Ambientada hace 300 años en la Nación Comanche. Naru es una joven guerrera, feroz y altamente hábil, que se crió a la sombra de algunos de los cazadores más legendarios que deambulan por las Grandes Llanuras. Cuando el peligro amenaza su campamento, se dispone a proteger a su gente. La presa a la que acecha y, en última instancia, se enfrenta, resulta ser un depredador alienígena evolucionado con un arsenal técnicamente avanzado, lo que deriva en un enfrentamiento cruel y aterrador entre los dos adversarios."
   ),
   new Producto(
     7,
@@ -107,7 +119,8 @@ const listaDePeliculas = [
     "ingles",
     "2022",
     1200,
-    "assets/img/suspenso2.jpg"
+    "assets/img/suspenso2.jpg",
+    "Tras escapar de un centro psiquiátrico estonio, Leena Klammer viaja a América haciéndose pasar por Esther, la hija desaparecida de una familia adinerada. Pero cuando su máscara empieza a caer, se enfrenta a una madre que protegerá a su familia de la niña asesina a cualquier precio."
   ),
   new Producto(
     8,
@@ -117,7 +130,8 @@ const listaDePeliculas = [
     "ingles",
     "2022",
     1200,
-    "assets/img/suspenso3.jpg"
+    "assets/img/suspenso3.jpg",
+    "En 1979, un grupo de jóvenes cineastas se propusieron hacer una película para adultos en la zona rural de Texas, pero cuando sus anfitriones solitarios y ancianos los atrapan en el acto, el elenco pronto se encuentra en una lucha desesperada por sus vidas."
   ),
   new Producto(
     9,
@@ -127,7 +141,8 @@ const listaDePeliculas = [
     "ingles",
     "2022",
     1200,
-    "assets/img/suspenso4.jpg"
+    "assets/img/suspenso4.jpg",
+    "Una joven madre soltera es cautiva junto con sus dos hijos por un ex violento y debe planear su escape antes de que sea demasiado tarde"
   ),
   new Producto(
     10,
@@ -137,7 +152,8 @@ const listaDePeliculas = [
     "ingles",
     "2022",
     1200,
-    "assets/img/suspenso5.jpg"
+    "assets/img/suspenso5.jpg",
+    "Juan, un agente del servicio secreto, se acerca a Wendy, una joven filipina que trabaja como criada para una pareja sospechosa."
   ),
   new Producto(
     11,
@@ -147,7 +163,8 @@ const listaDePeliculas = [
     "ingles",
     "2022",
     1200,
-    "assets/img/suspenso6.jpg"
+    "assets/img/suspenso6.jpg",
+    "Veronica, una estrella de cine envejecida, se retira a la campiña escocesa con su enfermera Desi para recuperarse de una doble mastectomía. Mientras está allí, fuerzas misteriosas le dan a Veronica el poder de vengarse en sus sueños"
   ),
   new Producto(
     12,
@@ -157,7 +174,8 @@ const listaDePeliculas = [
     "ingles",
     "2009",
     1300,
-    "assets/img/romance4.jpg"
+    "assets/img/romance4.jpg",
+    "Margaret (Sandra Bullock) es una poderosa y estricta editora de gran éxito de Nueva York que, por un problema con su visado, de repente se enfrenta a ser deportada a Canadá, su país de origen. Para evitarlo y poder mantener su visa en Estados Unidos, la astuta ejecutiva declara que está comprometida con su joven asistente Andrew (Ryan Reynolds), al que lleva torturando durante años. Andrew acepta participar en la farsa, pero con algunas condiciones. La pareja se dirige entonces a Alaska a conocer la peculiar familia de él, y la ejecutiva de ciudad, acostumbrada a tener todo bajo control, se encuentra inmersa en situaciones surrealistas que escapan a cualquier lógica conocida. Con planes de boda en camino y un agente de inmigración tras sus pasos, Margaret y Andrew se comprometen a seguir con el plan previsto pese a las consecuencias"
   ),
 ];
 
@@ -180,6 +198,32 @@ document.addEventListener("click", (e) => {
     eliminarDelCarrito(e);
   }
 });
+
+
+//boton info de la tarjetas
+document.addEventListener("click", (e) => {
+  if (e.target.matches(".btn-outline-info")) {
+   
+    mostrarInfo(e);
+  }
+});
+
+//funcion para la info de la cards
+
+function mostrarInfo (e){
+  e = e.target.dataset.id
+  infoId = Number(e)
+  info = listaDePeliculas.find (item => item.id==infoId)
+
+  Swal.fire({  
+  title: 'Descripcion de la Pelicula',
+  text: `${info.descripcion}`,
+  
+})
+}
+
+
+
 //boton Modal Comprar
 
 const button = document.querySelector("#botonModalComprar");
@@ -193,6 +237,10 @@ button.addEventListener("click", () => {
     imageAlt: 'Custom image',
     confirmButtonText: "Aceptar",
 });
+carrito.length=0
+badge.innerText=0
+precioTotal.innerText = 0
+verCarrito()
 });
 
 
@@ -215,13 +263,6 @@ botonInfo.addEventListener("click", () => {
     Swal.fire(text)
   }
 });
-
-//info de las tarejetas
-const infoTarjetas = document.querySelector("#btn-outline-info");
-infoTarjetas.addEventListener("click", () => {
-console.log('estas haciendo click');
-});
-
 
 
 
@@ -293,26 +334,27 @@ async function autenticar() {
 //boton corazon
 
 corazon.addEventListener("click", () => {
-  
-  if (corazon.classList.contains('heart-corazon')) {
+  corazon.classList.toggle ('heart-corazon')
+ /*  if (corazon.classList.contains('heart-corazon')) {
     corazon.classList.remove('heart-corazon')
   } else {
     corazon.classList.add('heart-corazon')
-  }
+  } */
 }
 );
 
-//corazones de las Cards
-const heart = document.getElementById ('#heart')
-heart-corazon.addEventListener("click",() => {
-  if (heart.classList.contains('heart-corazon')) {
-    
-  }else{
-    heart.classList.add('heart-corazon')
+
+
+
+// corazones de las cards
+
+const corazoncards = document.querySelector(".corazon2")
+
+document.addEventListener("click", (e) => {
+  if (e.target.matches("corazon2")) {
+    corazon.toggleClass("corazon2");
   }
-  console.log('estas haciendo click');
-}
-);
+});
 
 
 // eliminar uno a uno los productos del carrito 
@@ -345,10 +387,8 @@ function catalogoDePeliculas(productos) {
                                             <p class = "card-text">Duracion: ${producto.duracion}</p> 
                                             <p class = "card-text">Idioma: ${producto.idioma}</p>
                                             <button data-id="${producto.id}" class="btn btn-primary btncomprar m-3">Comprar</button>
-                                            <button type="button" class="btn btn-outline-info" id ="btn-outline-info">Info</button>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" id="heart" class="bi heart-corazon"viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-                                          </svg>
+                                            <button data-id="${producto.id}" type="button" class="btn btn-outline-info">Info</button>
+                                            <button class="corazon2" type="submit"><img src="assets/iconos/corazon.jpg" alt="imagen corazon"width="20" height="20"></button>
                                         </div>
                                     </div>`;
 
@@ -379,6 +419,7 @@ function agregarCarrito(e) {
         productoSeleccionado.anio,
         productoSeleccionado.precio,
         productoSeleccionado.img,
+        productoSeleccionado.descripcion,
         (productoSeleccionado.cantidad = 1)
       )
     );
