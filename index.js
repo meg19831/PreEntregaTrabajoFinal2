@@ -219,6 +219,7 @@ function mostrarInfo (e){
   title: 'Descripcion de la Pelicula',
   text: `${info.descripcion}`,
   
+  
 })
 }
 
@@ -264,7 +265,17 @@ botonInfo.addEventListener("click", () => {
   }
 });
 
+//boton corazon
 
+corazon.addEventListener("click", () => {
+  corazon.classList.toggle ('heart-corazon')
+ /*  if (corazon.classList.contains('heart-corazon')) {
+    corazon.classList.remove('heart-corazon')
+  } else {
+    corazon.classList.add('heart-corazon')
+  } */
+}
+);
 
 //autenticar usuario
 const loguinUsuario = [];
@@ -331,32 +342,6 @@ async function autenticar() {
 }
 
 
-//boton corazon
-
-corazon.addEventListener("click", () => {
-  corazon.classList.toggle ('heart-corazon')
- /*  if (corazon.classList.contains('heart-corazon')) {
-    corazon.classList.remove('heart-corazon')
-  } else {
-    corazon.classList.add('heart-corazon')
-  } */
-}
-);
-
-
-
-
-// corazones de las cards
-
-const corazoncards = document.querySelector(".corazon2")
-
-document.addEventListener("click", (e) => {
-  if (e.target.matches("corazon2")) {
-    corazon.toggleClass("corazon2");
-  }
-});
-
-
 // eliminar uno a uno los productos del carrito 
 const eliminarDelCarrito = (e) => {
   let eventoId=  e.target.dataset.id;
@@ -388,16 +373,20 @@ function catalogoDePeliculas(productos) {
                                             <p class = "card-text">Idioma: ${producto.idioma}</p>
                                             <button data-id="${producto.id}" class="btn btn-primary btncomprar m-3">Comprar</button>
                                             <button data-id="${producto.id}" type="button" class="btn btn-outline-info">Info</button>
-                                            <button class="corazon2" type="submit"><img src="assets/iconos/corazon.jpg" alt="imagen corazon"width="20" height="20"></button>
+                                            <span><i data-id="${producto.id}" id="${producto.id}" class="pintarCorazon fa-solid fa-heart"></i></span>
                                         </div>
                                     </div>`;
 
     peliculasContainer.appendChild(cardPeli);
-    
+
+    // corazones de las cards
+    cardPeli.querySelector("i").addEventListener("click",(e)=>{
+      e.target.classList.toggle("pintarCorazon");
+    })
   });
-
-
 }
+
+
 
 //funcion para agregar productos en el carrito
 
