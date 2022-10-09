@@ -6,17 +6,22 @@ const peliculasContainer = document.getElementById("peliculas-container");
 
 /* crear una funcion para mostrar las peliculas */
 
+document.addEventListener("DOMContentLoaded", () => {
+  fetchData();
+});
 
-  fetch("/data.json")
-    .then((resp) => resp.json())
-    .then((data) => {
-      data.forEach((producto) => {
-      
+let listaDePeliculas = [];
+async function fetchData() {
+  const res = await fetch("/data.json");
+  const data = await res.json();
+  listaDePeliculas = data;
+}
 
-        let cardPeli = document.createElement(`div`);
-        cardPeli.classList.add(`col-md-4`);
-        cardPeli.style = "width: 16rem";
-        cardPeli.innerHTML += ` <div class = "card my-3">;
+listaDePeliculas.forEach((producto) => {
+  let cardPeli = document.createElement(`div`);
+  cardPeli.classList.add(`col-md-4`);
+  cardPeli.style = "width: 16rem";
+  cardPeli.innerHTML += ` <div class = "card my-3">;
                                       <img src= "${producto.img}" class = "img-card-top" alt= "${producto.titulo}"> 
                                       <div class= "carPeli-body">
                                           <h5 class= "card-peli-titulo"> ${producto.titulo}</h5>
@@ -30,30 +35,28 @@ const peliculasContainer = document.getElementById("peliculas-container");
                                           <span><i data-id="${producto.id}" id="${producto.id}" class="pintarCorazon fa-solid fa-heart"></i></span>
                                       </div>
                                   </div>`;
-        peliculasContainer.appendChild(cardPeli);
+  peliculasContainer.appendChild(cardPeli);
 
-        //boton comprar
+  //boton comprar
 
-        document.addEventListener("click", (e) => {
-          if (e.target.matches(".btncomprar")) {
-            agregarCarrito(e);
-            Swal.fire(
-              "Producto agregado a tu carrito!",
-              "Dale click al boton!",
-              "success"
-            );
-          }
+  document.addEventListener("click", (e) => {
+    if (e.target.matches(".btncomprar")) {
+      agregarCarrito(e);
+      Swal.fire(
+        "Producto agregado a tu carrito!",
+        "Dale click al boton!",
+        "success"
+      );
+    }
 
-//funcion para agregar productos en el carrito
+    //funcion para agregar productos en el carrito
 
-function agregarCarrito(e) {
-  const cardNumero = Number(e.target.dataset.id);
-  const producto = data.find(
-    (i) => i.id === cardNumero
-  );
-  
-/* const coincidirCard = carrito.findIndex((i) => i.id === cardNumero); */
- /*  if (coincidirCard === -1) {
+    function agregarCarrito(e) {
+      const cardNumero = Number(e.target.dataset.id);
+      const producto = data.find((i) => i.id === cardNumero);
+
+      /* const coincidirCard = carrito.findIndex((i) => i.id === cardNumero); */
+      /*  if (coincidirCard === -1) {
     carrito.push(
 
         producto.id,
@@ -72,71 +75,57 @@ function agregarCarrito(e) {
     carrito[coincidirCard].cantidad++;
   }
  */
-  const repetir = carrito.some(
-    (repeatProduct) => repeatProduct.id === producto.id
-  );
-  if (repetir) {
-    carrito.map((producto) => {
-      if (producto.id === producto.id) {
-        producto.cantidad++;
-      }
-    });
-  } else {
-    carrito.push({
-      id:producto.id,
-      titulo:producto.titulo,
-      genero:producto.genero,
-      duracion:producto.duracion,
-      idioma:producto.idioma,
-      anio:producto.anio,
-      precio:producto.precio,
-      img:producto.img,
-      descripcion:producto.descripcion,
-      
-    })
-  }
-  verCarrito();
-}
-
-
+      const repetir = carrito.some(
+        (repeatProduct) => repeatProduct.id === producto.id
+      );
+      if (repetir) {
+        carrito.map((producto) => {
+          if (producto.id === producto.id) {
+            producto.cantidad++;
+          }
         });
-      
-      
-      // corazones de las cards
-cardPeli.querySelector("i").addEventListener("click", (e) => {
-  e.target.classList.toggle("pintarCorazon");
-});
-
-//funcion para la info de la cards
-
-function mostrarInfo(e) {
-  e = e.target.dataset.id;
-  infoId = Number(e);
-  info = data.find((item) => item.id == infoId);
-
-  Swal.fire({
-    title: "Descripcion de la Pelicula",
-    text: `${info.descripcion}`,
+      } else {
+        carrito.push({
+          id: producto.id,
+          titulo: producto.titulo,
+          genero: producto.genero,
+          duracion: producto.duracion,
+          idioma: producto.idioma,
+          anio: producto.anio,
+          precio: producto.precio,
+          img: producto.img,
+          descripcion: producto.descripcion,
+        });
+      }
+      verCarrito();
+    }
   });
-}
 
+  // corazones de las cards
+  cardPeli.querySelector("i").addEventListener("click", (e) => {
+    e.target.classList.toggle("pintarCorazon");
+  });
 
-//boton info de la tarjetas
-document.addEventListener("click", (e) => {
-  if (e.target.matches(".btn-outline-info")) {
-    mostrarInfo(e);
-  }
-});
+  //funcion para la info de la cards
 
-});
-    
+  function mostrarInfo(e) {
+    e = e.target.dataset.id;
+    infoId = Number(e);
+    info = data.find((item) => item.id == infoId);
+
+    Swal.fire({
+      title: "Descripcion de la Pelicula",
+      text: `${info.descripcion}`,
     });
+  }
 
-
-
-
-
-
+  //boton info de la tarjetas
+  document.addEventListener("click", (e) => {
+    if (e.target.matches(".btn-outline-info")) {
+      mostrarInfo(e);
+    }
+  });
+});
 
 class Producto {
   constructor(
@@ -168,5 +157,4 @@ class Producto {
 
 corazon.addEventListener("click", () => {
   corazon.classList.toggle("heart-corazon");
-  
 });
