@@ -1,0 +1,135 @@
+[
+    {
+      "id": 1,
+      "titulo":"Capitan america",
+      "genero":"accion",
+      "duracion": "2:04:00",
+      "idioma": "ingles",
+      "anio": "2011",
+      "precio": 1500,
+      "img": "assets/img/accion8.jpg",
+      "descripcion": "Captain America: Civil War” continúa la historia de “Avengers: Age of Ultron”, con Steve Rogers liderando un nuevo equipo de Vengadores en su esfuerzo por proteger a la humanidad. Tras otro incidente internacional relacionado con los Vengadores que ocasiona daños colaterales, la presión política fuerza a crear un sistema de registro y un cuerpo gubernamental para determinar cuándo se requiere los servicios del equipo. El nuevo status quo divide a los Vengadores mientras intentan salvar al mundo de un nuevo y perverso villano."
+    },
+    {
+      "id": 2,
+     "titulo": "Advenger",
+      "genero":"accion",
+      "duracion": "2:23:00",
+      "idioma": "ingles",
+      "anio": "2012",
+      "precio": 1500,
+      "img": "assets/img/accion7.jpg",
+     "descripcion" :"Cuando un enemigo inesperado surge como una gran amenaza para la seguridad mundial, Nick Fury, director de la Agencia SHIELD, decide reclutar a un equipo para salvar al mundo de un desastre casi seguro."
+    },
+    {
+       "id":3,
+      "titulo": "El señor de los anillos",
+      "genero":"aventura",
+      "duracion":"2:59:00",
+      "idioma":"ingles",
+      "anio":2005,
+      "precio":1100,
+      "img":"assets/img/aventura7.jpg",
+      "descripcion":"La Compañía del Anillo se ha disuelto. El portador del anillo Frodo y su fiel amigo Sam se dirigen hacia Mordor para destruir el Anillo Único y acabar con el poder de Sauron. Mientras, y tras la dura batalla contra los orcos donde cayó Boromir, el hombre Aragorn, el elfo Legolas y el enano Gimli intentan rescatar a los medianos Merry y Pipin, secuestrados por los ogros de Mordor. Por su parte, Saurón y el traidor Sarumán continúan con sus planes en Mordor, en espera de la guerra contra las razas libres de la Tierra Media."
+    },
+    {
+      "id":4,
+      "titulo":"Jhon Wick",
+      "genero":"suspenso",
+      "duracion":"1:41:00",
+      "idioma":"ingles",
+      "anio":"2014",
+      "precio":1200,
+      "img":"assets/img/suspenso7.jpg",
+      "descripcion":"John Wick es un antiguo asesino a sueldo de Nueva York que se había retirado de la profesión después de perder a su esposa. Pero, al descubrir la oscura trama que la mafia había planeado para acabar con él, arrebatándole lo que más quería, volverá a introducirse en el negocio, esta vez por su cuenta, para vengarse."
+    },
+    {
+      "id":5,
+      "titulo":"SnowPiercer",
+     "genero":"accion",
+      "duracion":"00:50:00",
+      "idioma":"ingles",
+      "anio":"2020",
+      "precio":1200,
+      "img":"assets/img/accion4.jpg",
+      "descripcion":"Un experimento para solucionar el calentamiento global acabó con la mayoría de vida existente en el planeta. El último tren llamado Snowpiercer (Rompenieves) se mueve en círculos por el mundo, a través de un desierto de hielo y nieve. Los últimos supervivientes de la Tierra se amontonan en sus vagones. El joven Curtis (Chris Evans) iniciará una revolución desde los vagones de cola."
+    },
+    {
+      "id":6,
+      "titulo":"La presa",
+      "genero":"suspenso",
+      "duracion":"01: 40:00",
+      "idioma":"ingles",
+      "anio":"2022",
+      "precio":1200,
+      "img":"assets/img/suspenso1.jpg",
+      "descripcion":"Ambientada hace 300 años en la Nación Comanche. Naru es una joven guerrera, feroz y altamente hábil, que se crió a la sombra de algunos de los cazadores más legendarios que deambulan por las Grandes Llanuras. Cuando el peligro amenaza su campamento, se dispone a proteger a su gente. La presa a la que acecha y, en última instancia, se enfrenta, resulta ser un depredador alienígena evolucionado con un arsenal técnicamente avanzado, lo que deriva en un enfrentamiento cruel y aterrador entre los dos adversarios."
+    },
+    {
+      "id":7,
+      "titulo":"La huerfana",
+      "genero":"suspenso",
+      "duracion":"01:39:00",
+      "idioma":"ingles",
+      "anio":"2022",
+      "precio":1200,
+      "img":"assets/img/suspenso2.jpg",
+      "descripcion":"Tras escapar de un centro psiquiátrico estonio, Leena Klammer viaja a América haciéndose pasar por Esther, la hija desaparecida de una familia adinerada. Pero cuando su máscara empieza a caer, se enfrenta a una madre que protegerá a su familia de la niña asesina a cualquier precio."
+    },
+    {
+      "id":8,
+      "titulo":"Proyecto X",
+      "genero":"suspenso",
+      "duracion":"01:45:00",
+      "idioma":"ingles",
+      "anio":"2022",
+      "precio":1200,
+      "img":"assets/img/suspenso3.jpg",
+      "descripcion":"En 1979, un grupo de jóvenes cineastas se propusieron hacer una película para adultos en la zona rural de Texas, pero cuando sus anfitriones solitarios y ancianos los atrapan en el acto, el elenco pronto se encuentra en una lucha desesperada por sus vidas."
+    },
+    {
+      "id":9,
+      "titulo":"Encerrada",
+      "genero":"suspenso",
+      "duracion":"01:29:00",
+      "idioma":"ingles",
+      "anio":"2022",
+      "precio":1200,
+      "img":"assets/img/suspenso4.jpg",
+      "descripcion":"Una joven madre soltera es cautiva junto con sus dos hijos por un ex violento y debe planear su escape antes de que sea demasiado tarde"
+    },
+   {
+      "id":10,
+      "titulo":"Codigo emperador",
+      "genero":"accion",
+      "duracion":"01:46:00",
+      "idioma":"ingles",
+      "anio":"2022",
+      "precio":1200,
+      "img":"assets/img/suspenso5.jpg",
+      "descripcion":"Juan, un agente del servicio secreto, se acerca a Wendy, una joven filipina que trabaja como criada para una pareja sospechosa."
+    },
+   {
+      "id":11,
+      "titulo":"She Will",
+      "genero":"suspenso",
+      "duracion":"01:45:00",
+      "idioma":"ingles",
+      "anio":"2022",
+      "precio":1200,
+      "img":"assets/img/suspenso6.jpg",
+      "descripcion":"Veronica, una estrella de cine envejecida, se retira a la campiña escocesa con su enfermera Desi para recuperarse de una doble mastectomía. Mientras está allí, fuerzas misteriosas le dan a Veronica el poder de vengarse en sus sueños"
+    },
+   {
+      "id":12,
+      "titulo":"La proposicion",
+      "genero":"romance",
+      "duracion":"01:45:00",
+      "idioma":"ingles",
+      "anio":"2009",
+      "precio":1300,
+      "img":"assets/img/romance4.jpg",
+      "descripcion":"Margaret (Sandra Bullock) es una poderosa y estricta editora de gran éxito de Nueva York que, por un problema con su visado, de repente se enfrenta a ser deportada a Canadá, su país de origen. Para evitarlo y poder mantener su visa en Estados Unidos, la astuta ejecutiva declara que está comprometida con su joven asistente Andrew (Ryan Reynolds), al que lleva torturando durante años. Andrew acepta participar en la farsa, pero con algunas condiciones. La pareja se dirige entonces a Alaska a conocer la peculiar familia de él, y la ejecutiva de ciudad, acostumbrada a tener todo bajo control, se encuentra inmersa en situaciones surrealistas que escapan a cualquier lógica conocida. Con planes de boda en camino y un agente de inmigración tras sus pasos, Margaret y Andrew se comprometen a seguir con el plan previsto pese a las consecuencias"
+    }
+  ]
+  

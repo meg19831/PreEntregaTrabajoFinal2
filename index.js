@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 let listaDePeliculas = [];
 async function fetchData() {
-  const res = await fetch("/data.json");
+  const res = await fetch("data.json");
   const data = await res.json();
   listaDePeliculas = data;
 }
@@ -48,15 +48,15 @@ listaDePeliculas.forEach((producto) => {
         "success"
       );
     }
-
+  });
     //funcion para agregar productos en el carrito
 
     function agregarCarrito(e) {
       const cardNumero = Number(e.target.dataset.id);
-      const producto = data.find((i) => i.id === cardNumero);
+      const producto = listaDePeliculas.find((i) => i.id === cardNumero);
 
-      /* const coincidirCard = carrito.findIndex((i) => i.id === cardNumero); */
-      /*  if (coincidirCard === -1) {
+      const coincidirCard = carrito.findIndex((i) => i.id === cardNumero);
+       if (coincidirCard === -1) {
     carrito.push(
 
         producto.id,
@@ -74,8 +74,8 @@ listaDePeliculas.forEach((producto) => {
   } else {
     carrito[coincidirCard].cantidad++;
   }
- */
-      const repetir = carrito.some(
+ 
+      /* const repetir = carrito.some(
         (repeatProduct) => repeatProduct.id === producto.id
       );
       if (repetir) {
@@ -96,10 +96,10 @@ listaDePeliculas.forEach((producto) => {
           img: producto.img,
           descripcion: producto.descripcion,
         });
-      }
+      } */
       verCarrito();
     }
-  });
+  
 
   // corazones de las cards
   cardPeli.querySelector("i").addEventListener("click", (e) => {
