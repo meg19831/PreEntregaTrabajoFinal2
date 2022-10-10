@@ -25,7 +25,7 @@ button.addEventListener("click", () => {
 
 const botonInfo = document.querySelector("#btn-info");
 botonInfo.addEventListener("click", () => {
-  const { value: text } = Swal.fire({
+  /* const { value: text } = Swal.fire({
     input: "textarea",
     inputLabel: "Informacion",
     inputPlaceholder:
@@ -38,7 +38,14 @@ botonInfo.addEventListener("click", () => {
 
   if (text) {
     Swal.fire(text);
-  }
+  } */
+  Swal.fire({
+    title: 'Snowpiercer',
+    text: 'Un experimento para solucionar el calentamiento global acabó con la mayoría de vida existente en el planeta. El último tren llamado Snowpiercer (Rompenieves) se mueve en círculos por el mundo, a través de un desierto de hielo y nieve. Los últimos supervivientes de la Tierra se amontonan en sus vagones. El joven Curtis (Chris Evans) iniciará una revolución desde los vagones de cola.',
+    confirmButtonColor: '#24E0B8',
+    background: '#DAEBE7'
+    
+  })
 });
 
 // eliminar uno a uno los productos del carrito
@@ -84,7 +91,11 @@ const eliminarDelCarrito = (e) => {
       let badge = document.getElementById("badge");
       badge.innerText = carrito.length;
       precioTotal.textContent = total;
-    });
+      
+
+    
+  });
+    
   }
   
   //vaciar carrito
@@ -106,7 +117,7 @@ const eliminarDelCarrito = (e) => {
   
 
  document.addEventListener("DOMContentLoaded", (e) => {
-    catalogoDePeliculas(listaDePeliculas);
+
     if (localStorage.getItem("carrito")) {
       carrito = JSON.parse(localStorage.getItem("carrito"));
       verCarrito();
