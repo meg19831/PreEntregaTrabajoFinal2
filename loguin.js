@@ -1,6 +1,7 @@
 //autenticar usuario
 const loguinUsuario = [];
 
+
 async function autenticar() {
   const { value: formAutenticar } = await Swal.fire({
     title: "Registro Usuario",
@@ -52,6 +53,10 @@ async function autenticar() {
       backdrop: false,
     });
     loguinUsuario.push(datosUsuario);
+    localStorage.setItem(
+      "valores_de_los_input",
+      JSON.stringify(loguinUsuario)
+    )
   } else {
     Swal.fire({
       title: "Datos incorrectos",
@@ -60,3 +65,10 @@ async function autenticar() {
     });
   }
 }
+//finalizar compra 
+/* function finalizarCompra() {
+  document.getElementById("UserName").value
+ sesionStorage.setItem("userName")
+ sesionStorage.getItem("userName")
+
+ } */

@@ -7,38 +7,37 @@ const precioTotal = document.getElementById("precioTotal");
 const button = document.querySelector("#botonModalComprar");
 button.addEventListener("click", () => {
   Swal.fire({
-    title: "Muchas Gracias por tu compra",
+    title: `Muchas Gracias por tu compra`,
     text: "La venta fue guardada con el id 123456. Pronto te llegará una confirmación a tu correo electrónico",
     imageUrl: "assets/img/imagenFinalDeCompra.png",
     imageWidth: 400,
     imageHeight: 200,
     imageAlt: "Custom image",
     confirmButtonText: "Aceptar",
+  
   });
+//para que me aparezcan los datos al finalizar compra????
+  /* function recuperarDatos() {
+    localStorage.getItem(document.getElementById("UserName").value)
+    alert(document.getElementById("UserName").value)
+  } */
+
   carrito.length = 0;
   badge.innerText = 0;
   precioTotal.innerText = 0;
   verCarrito();
+  /* recuperarDatos() */
 });
+
+
+
+
 
 //boton Informacion
 
 const botonInfo = document.querySelector("#btn-info");
 botonInfo.addEventListener("click", () => {
-  /* const { value: text } = Swal.fire({
-    input: "textarea",
-    inputLabel: "Informacion",
-    inputPlaceholder:
-      "Un experimento para solucionar el calentamiento global acabó con la mayoría de vida existente en el planeta. El último tren llamado Snowpiercer (Rompenieves) se mueve en círculos por el mundo, a través de un desierto de hielo y nieve. Los últimos supervivientes de la Tierra se amontonan en sus vagones. El joven Curtis (Chris Evans) iniciará una revolución desde los vagones de cola.",
-    inputAttributes: {
-      "aria-label": "Type your message here",
-    },
-    showCancelButton: true,
-  });
-
-  if (text) {
-    Swal.fire(text);
-  } */
+  
   Swal.fire({
     title: 'Snowpiercer',
     text: 'Un experimento para solucionar el calentamiento global acabó con la mayoría de vida existente en el planeta. El último tren llamado Snowpiercer (Rompenieves) se mueve en círculos por el mundo, a través de un desierto de hielo y nieve. Los últimos supervivientes de la Tierra se amontonan en sus vagones. El joven Curtis (Chris Evans) iniciará una revolución desde los vagones de cola.',

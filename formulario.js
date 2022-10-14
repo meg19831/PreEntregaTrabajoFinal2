@@ -40,5 +40,5 @@ formulario.addEventListener("submit", (e) => {
     mostrarErrores.innerHTML = error;
   }
 
-  console.log(infoFormulario);
+  
 });
