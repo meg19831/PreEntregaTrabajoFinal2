@@ -71,7 +71,7 @@ h2{
     font-size: 16px;
     min-height: 40.62em;
     color: white;
-    background:linear-gradient( rgb(0, 0, 0, .50)0% , rgb(0, 0, 0, .50)100%) , url(/PreEntregaTrabajoFinal2/assets/img/imagenPrincial.jpg);
+    background:linear-gradient( rgb(0, 0, 0, .50)0% , rgb(0, 0, 0, .50)100%) , url(../assets/img/imagenPrincial.jpg);
     background-position: center center;
 }
 
