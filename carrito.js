@@ -6,30 +6,24 @@ const precioTotal = document.getElementById("precioTotal");
 
 const button = document.querySelector("#botonModalComprar");
 button.addEventListener("click", () => {
+ 
   Swal.fire({
-    title: `Muchas Gracias por tu compra`,
-    text: "La venta fue guardada con el id 123456. Pronto te llegará una confirmación a tu correo electrónico",
+    html: `<p>Venta guardada con el id <strong>12321312</strong></p>
+    <br>
+    <a href="#">Imprimir ticket</a>
+    <p> ${(loguinUsuario)} Pronto te llegará un email para que puedas disfrutar de tu compra</p>`,
     imageUrl: "assets/img/imagenFinalDeCompra.png",
     imageWidth: 400,
     imageHeight: 200,
     imageAlt: "Custom image",
-    confirmButtonText: "Aceptar",
+});
   
-  });
-//para que me aparezcan los datos al finalizar compra????
-  /* function recuperarDatos() {
-    localStorage.getItem(document.getElementById("UserName").value)
-    alert(document.getElementById("UserName").value)
-  } */
-
   carrito.length = 0;
   badge.innerText = 0;
   precioTotal.innerText = 0;
   verCarrito();
-  /* recuperarDatos() */
+  
 });
-
-
 
 
 

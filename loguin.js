@@ -1,12 +1,17 @@
 //autenticar usuario
-const loguinUsuario = [];
+const loguinUsuario = []; 
+
 
 
 async function autenticar() {
+  loguinUsuario.length = 0;
+  mostrarUsuarios = document.querySelector("#spanCantidad");
+  mostrarUsuarios.classList.add("d-none");
+  mostrarUsuarios.textContent = "";
   const { value: formAutenticar } = await Swal.fire({
     title: "Registro Usuario",
     html:
-      '<div class="form-inline col-sm-12 mt-3">' +
+      '<div class="form-inline col-sm-12 mt-3" >' +
       '<label class="control-label col-sm-4" for="UserName">Usuario</label>' +
       '<input required="" class="form-control col-sm-7" id="UserName" name="usuario" type="text" autofocus style="color: #2e7d32;">' +
       "</div>" +
@@ -28,7 +33,9 @@ async function autenticar() {
       return [
         document.getElementById("UserName").value,
         document.getElementById("UserPass").value,
+        
       ];
+      
     },
     onOpen: (modal) => {
       confirmOnEnter = (event) => {
@@ -46,29 +53,40 @@ async function autenticar() {
     },
   });
 
+  
+
   if (formAutenticar && formAutenticar[0] != "" && formAutenticar[1] != "") {
-    const datosUsuario = Swal.fire({
+    const datosUsuario = document.querySelector("#UserName").value
+    localStorage.setItem("UserName ",JSON.stringify(loguinUsuario))
+    localStorage.getItem("UserName ",JSON.stringify(loguinUsuario))
+    loguinUsuario.push(datosUsuario);
+    Swal.fire({
       title: "Usuario Registrado",
       icon: "success",
       backdrop: false,
     });
-    loguinUsuario.push(datosUsuario);
-    localStorage.setItem(
-      "valores_de_los_input",
-      JSON.stringify(loguinUsuario)
-    )
+    
   } else {
     Swal.fire({
-      title: "Datos incorrectos",
+      title: "Datos incorrectos. Ingrese Usuario y Contaseña",
       icon: "warning",
       backdrop: false,
     });
+    mostrarUsuarios.classList.remove("d-none");
+    mostrarUsuarios.innerHTML = error;
   }
+  /* loguinUsuario.remove(); */
+  
 }
-//finalizar compra 
-/* function finalizarCompra() {
-  document.getElementById("UserName").value
- sesionStorage.setItem("userName")
- sesionStorage.getItem("userName")
 
- } */
+
+
+//finalizar compra 
+document.addEventListener("DOMContentLoaded", (e) => {
+
+  if (localStorage.getItem("loguinUsuario")) {
+    loguinUsuario = JSON.parse(localStorage.getItem("loguinUsuario"));
+    
+  }
+  
+}); 
