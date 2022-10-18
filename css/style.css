@@ -57,6 +57,7 @@ h2{
 }
 .nav-link,
 .nav-link active {
+    display: inline-block;
     color: white 
 }
 .contenedor{
@@ -64,6 +65,10 @@ h2{
     margin: auto;
 }
 
+nav{
+    display: flex;
+    justify-content:flex-end;
+}
 
 /* -------------Pelicula Principal-----------------*/
 
